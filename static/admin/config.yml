@@ -1,12 +1,9 @@
 local_backend: true
 
 backend:
-  name: github
-  repo: poslovnimediji/decap-cms-tester
+  name: git-gateway
   branch: main
   squash_merges: true
-  always_fork: true
-  open_authoring: true
 
 publish_mode: editorial_workflow
 display_url: https://hugo-template.netlify.app/
@@ -18,33 +15,57 @@ slug:
   encoding: ascii
   clean_accents: true
 
-aliases:
-  - &VISIBLE_IN_CMS {name: visibleInCMS, widget: hidden, default: true}
+i18n:
+  structure: multiple_files
+  locales: [en, de, si]
 
-# https://decapcms.org/docs/configuration-options/#publish-mode
+aliases:
+  - &VISIBLE_IN_CMS {name: visibleInCMS, widget: hidden, default: true, i18n: duplicate}
+
+# https://www.netlifycms.org/docs/configuration-options/#publish-mode
 # publish_mode: editorial_workflow
 
 collections:
+  - name: properties
+    label: Property groups
+    label_singular: property group
+    format: yaml-frontmatter
+    folder: content/properties
+    path: '{{slug}}/_index'
+    create: true
+    i18n: true
+    description: Property landing pages
+    editor:
+      preview: false
+    filter: {field: visibleInCMS, value: true}
+    fields: [
+      {name: title, widget: string},
+      {name: description, widget: text},
+      {name: image, widget: image},
+      {name: body, widget: markdown},
+      *VISIBLE_IN_CMS,
+    ]
+
   - name: posts
     label: Posts
     label_singular: post
     folder: content/posts
     create: true
     slug: "{{slug}}"
-
+    i18n: true
     # This is hack to remove index.md from the list. Add visibleInCMS: true to all content files except index pages.
     filter: {field: visibleInCMS, value: true}
-
     # Enable this for a prewiew on the right when editing. You will have to create a preview template for it to make sense.
     editor:
       preview: false
 
     # more about widgets: https://www.netlifycms.org/docs/widgets/
     fields: [
-      {name: title, widget: string},
-      {name: description, widget: text},
-      {name: image, widget: image},
-      {name: body, widget: markdown},
+      {name: title, widget: string, i18n: true},
+      {name: properties, widget: relation, collection: properties, search_fields: ["title"], display_fields: ["title", "destination", "brand"], value_field: "{{slug}}", multiple: true, required: false},
+      {name: description, widget: text, i18n: true},
+      {name: image, widget: image, i18n: duplicate},
+      {name: body, widget: markdown, i18n: true},
       *VISIBLE_IN_CMS,
     ]
 
@@ -62,6 +83,17 @@ collections:
         {name: params, widget: object, fields: [
           {name: description, widget: text},
           {name: image, widget: image},
+        ]},
+      ]
+    - label: Cookies
+      name: cookies
+      file: data/cookies.json
+      fields: [
+        {name: text, widget: string},
+        {name: confirm, widget: string},
+        {name: more, widget: object, fields: [
+          {name: text, widget: string},
+          {name: href, widget: string},
         ]},
       ]
     - label: Footer
