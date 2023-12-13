@@ -1,0 +1,3 @@
+---
+visibleInCMS: true
+---
