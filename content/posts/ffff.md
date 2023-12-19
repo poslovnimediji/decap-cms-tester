@@ -1,5 +1,5 @@
 ---
-title: Renamed post 2 clear?
+title: Renamed
 description: fadsf
 visibleInCMS: true
 ---
