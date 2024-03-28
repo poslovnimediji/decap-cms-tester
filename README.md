@@ -18,20 +18,18 @@ When you have that run one of these commands for local dev server:
 
 and open your local site on http://localhost:1313/
 
-## Development
+## Testing Decap local build
 
-We use [BEM](http://getbem.com/) naming convention for CSS class names.
+In this project (decap-cms-tester): 
 
-We follow the standard Javascript style.
+* Run `npx decap-server`
 
-### Linters
+In decap-cms project:
 
-There are 3 linters set up:
-- [stylelint](https://stylelint.io/) for CSS
-- [eslint](https://eslint.org/) for JS
-- [htmlhint](https://htmlhint.com/) for HTML
+* Run `npm run start`
+* Add `local_backend = true` to `dev-test/config.toml`
 
-If quick fixes are possible, VS Code will fix them on save. A pre-commit git hook is also in place. It triggers all 3 linters on staged files, and if there are errors, it prevents the commit.
+Open `http://localhost:8080/` in your browser. You should see the admin panel with config from decap-cms project. All changes will be saved to this project's folders. This also works with any other project on which you might run `npx decap-server` with these steps.
 
 ## Built With
 
