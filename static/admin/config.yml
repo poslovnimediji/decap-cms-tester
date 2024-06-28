@@ -5,7 +5,7 @@ backend:
   repo: poslovnimediji/decap-cms-tester
   branch: backend-github
 
-# publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 display_url: https://hugo-template.netlify.app/
 logo_url: /media/brand/logo.svg
 media_folder: static/media/uploads
