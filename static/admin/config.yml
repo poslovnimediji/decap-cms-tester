@@ -3,7 +3,7 @@ local_backend: true
 backend:
   name: github
   repo: poslovnimediji/decap-cms-tester
-  branch: main
+  branch: backend-github
 
 # publish_mode: editorial_workflow
 display_url: https://hugo-template.netlify.app/
