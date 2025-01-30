@@ -23,7 +23,7 @@ aliases:
   - &VISIBLE_IN_CMS {name: visibleInCMS, widget: hidden, default: true, i18n: duplicate}
 
 collections:
-  - label: 'Pages'
+  - label: 'subfolders'
     name: 'subfolders'
     folder: 'content/subfolders'
     identifier_field: 'title'
@@ -35,7 +35,7 @@ collections:
       summary: '{{title}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-  - label: 'Pages'
+  - label: 'supages'
     name: 'subpages'
     folder: 'content/subpages'
     identifier_field: 'title'
