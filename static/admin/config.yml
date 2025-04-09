@@ -2,11 +2,11 @@ local_backend: true
 
 backend:
   name: git-gateway
-  branch: main
+  branch: moc-358
   squash_merges: true
 
 publish_mode: editorial_workflow
-display_url: https://hugo-template.netlify.app/
+display_url: https://decap-cms-tester.netlify.app/
 logo_url: /media/brand/logo.svg
 media_folder: static/media/uploads
 public_folder: /media/uploads
@@ -45,5 +45,6 @@ collections:
     nested:
       depth: 10
       summary: '{{title}}'
+      subfolders: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
