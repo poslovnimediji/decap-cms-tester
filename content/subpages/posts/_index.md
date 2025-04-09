@@ -1,4 +1,3 @@
 ---
-title: Posts
-description: List of lorem ipsums
+title: Aaaa
 ---
