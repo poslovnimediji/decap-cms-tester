@@ -29,12 +29,13 @@ collections:
     identifier_field: 'title'
     create: true
     extension: 'md'
-    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
+    i18n: true
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
     nested:
       depth: 10
       summary: '{{title}}'
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string', i18n: true }
   - label: 'supages'
     name: 'subpages'
     folder: 'content/subpages'
