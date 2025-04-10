@@ -1,3 +1,3 @@
 ---
-title: Subpages English
+title: Subpages EN
 ---

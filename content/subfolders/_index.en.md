@@ -1,3 +1,3 @@
 ---
-title: Subfolders
+title: Subfolders i18n
 ---

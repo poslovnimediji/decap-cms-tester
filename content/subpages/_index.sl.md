@@ -1,3 +1,3 @@
 ---
-title: Podstrani
+title: Subpages i18n
 ---

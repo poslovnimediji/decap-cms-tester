@@ -1,3 +1,3 @@
 ---
-title: Podmape
+title: Subfolders i18n
 ---

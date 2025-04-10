@@ -1,3 +1,3 @@
 ---
-title: CCC Content
+title: Ccc
 ---

@@ -1,3 +1,3 @@
 ---
-title: Subpages
+title: Subpages i18n
 ---
