@@ -17,7 +17,7 @@ slug:
 
 i18n:
   structure: multiple_files
-  locales: [en, de, si]
+  locales: [en, sl]
 
 aliases:
   - &VISIBLE_IN_CMS {name: visibleInCMS, widget: hidden, default: true, i18n: duplicate}
@@ -41,10 +41,11 @@ collections:
     identifier_field: 'title'
     create: true
     extension: 'md'
+    i18n: true
     meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
     nested:
       depth: 10
       summary: '{{title}}'
       subfolders: false
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string', i18n: true }
