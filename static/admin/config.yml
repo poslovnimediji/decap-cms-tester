@@ -52,3 +52,30 @@ collections:
       pattern: _index
     fields:
       - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+  - label: 'English Subfolders'
+    name: 'subfolders-en'
+    folder: 'content/subfolders-en'
+    identifier_field: 'title'
+    create: true
+    extension: 'md'
+    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
+    nested:
+      depth: 10
+      summary: '{{title}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+  - label: 'English Subpages'
+    name: 'subpages-en'
+    folder: 'content/subpages-en'
+    identifier_field: 'title'
+    create: true
+    extension: 'md'
+    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
+    nested:
+      depth: 10
+      summary: '{{title}}'
+      subfolders: false
+    index_file:
+      pattern: _index
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
