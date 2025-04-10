@@ -23,7 +23,7 @@ aliases:
   - &VISIBLE_IN_CMS {name: visibleInCMS, widget: hidden, default: true, i18n: duplicate}
 
 collections:
-  - label: 'subfolders'
+  - label: 'Subfolders i18n'
     name: 'subfolders'
     folder: 'content/subfolders'
     identifier_field: 'title'
@@ -36,7 +36,7 @@ collections:
       summary: '{{title}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string', i18n: true }
-  - label: 'supages'
+  - label: 'Subpages i18n'
     name: 'subpages'
     folder: 'content/subpages'
     identifier_field: 'title'
@@ -52,7 +52,7 @@ collections:
       pattern: _index
     fields:
       - { label: 'Title', name: 'title', widget: 'string', i18n: true }
-  - label: 'English Subfolders'
+  - label: 'Subfolders EN'
     name: 'subfolders-en'
     folder: 'content/subfolders-en'
     identifier_field: 'title'
@@ -64,7 +64,7 @@ collections:
       summary: '{{title}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-  - label: 'English Subpages'
+  - label: 'Subpages EN'
     name: 'subpages-en'
     folder: 'content/subpages-en'
     identifier_field: 'title'
