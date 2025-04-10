@@ -29,7 +29,7 @@ collections:
     identifier_field: 'title'
     create: true
     extension: 'md'
-    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
     nested:
       depth: 10
       summary: '{{title}}'
@@ -47,5 +47,7 @@ collections:
       depth: 10
       summary: '{{title}}'
       subfolders: false
+    index_file:
+      pattern: _index
     fields:
       - { label: 'Title', name: 'title', widget: 'string', i18n: true }
