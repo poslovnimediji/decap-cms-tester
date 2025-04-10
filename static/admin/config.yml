@@ -30,7 +30,7 @@ collections:
     create: true
     extension: 'md'
     i18n: true
-    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
     nested:
       depth: 10
       summary: '{{title}}'
