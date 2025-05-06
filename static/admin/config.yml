@@ -1,12 +1,11 @@
 local_backend: true
 
 backend:
-  name: git-gateway
-  branch: main
+  name: github
+  repo: poslovnimediji/decap-cms-tester
+  branch: github-only
   squash_merges: true
 
-publish_mode: editorial_workflow
-display_url: https://hugo-template.netlify.app/
 logo_url: /media/brand/logo.svg
 media_folder: static/media/uploads
 public_folder: /media/uploads
