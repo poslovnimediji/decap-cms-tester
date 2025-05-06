@@ -25,3 +25,7 @@ unsafe = true
 
 [security.funcs]
 getenv = ["^HUGO_", "CONTEXT"]
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
