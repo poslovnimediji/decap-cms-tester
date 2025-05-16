@@ -43,6 +43,46 @@
   <meta property="og:description" content="{{ $ogDesc }}">
   <meta property="og:image" content="{{ .Site.BaseURL }}{{ $ogImage }}">
 
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet">
+  <style>
+    :root {
+      --chat--header--background: #0053a8;
+      --chat--color-primary: #0053a8;
+      --chat--color-primary-shade-50: #2579cf;
+      --chat--color-primary-shade-100: #2579cf;
+      --chat--color-secondary: #353d45;
+      --chat--color-secondary-shade-50: #353a3e;
+      --chat--color-secondary-shade-100: #353a3e;
+      --chat--heading--font-size: 24px;
+      --chat--spacing: 0.7rem;
+      --chat--window--width: 550px;
+      --chat--window--height: 700px;
+      --chat--message--font-size: 13px;
+    }
+    h1 {
+      margin: 0.5rem 0;
+    }
+  </style>
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    createChat({
+      webhookUrl: 'https://anze-pm.app.n8n.cloud/webhook/a889d2ae-2159-402f-b326-5f61e90f602e/chat',
+      initialMessages: [
+        'Hi there! 👋',
+        'May I help you book your perfect holiday?'
+      ],
+      i18n: {
+        en: {
+          title: 'Maistra booking assistant',
+          subtitle: "",
+          footer: '',
+          getStarted: 'New Conversation',
+          inputPlaceholder: 'Type your question..',
+        },
+      },
+    })
+  </script>
+
   {{ partial "base/styles" . }}
 </head>
 
