@@ -1,7 +1,4 @@
 ---
-title: test
-description: dsf
 image: sdf
 visibleInCMS: true
 ---
-sdf
