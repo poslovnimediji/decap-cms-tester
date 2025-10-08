@@ -21,8 +21,7 @@ i18n:
 aliases:
   - &VISIBLE_IN_CMS {name: visibleInCMS, widget: hidden, default: true, i18n: duplicate}
 
-# https://www.netlifycms.org/docs/configuration-options/#publish-mode
-# publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 
 collections:
   - name: properties
@@ -52,13 +51,10 @@ collections:
     create: true
     slug: "{{slug}}"
     i18n: true
-    # This is hack to remove index.md from the list. Add visibleInCMS: true to all content files except index pages.
     filter: {field: visibleInCMS, value: true}
-    # Enable this for a prewiew on the right when editing. You will have to create a preview template for it to make sense.
     editor:
       preview: false
 
-    # more about widgets: https://www.netlifycms.org/docs/widgets/
     fields: [
       {name: title, widget: string, i18n: true},
       {name: properties, widget: relation, collection: properties, search_fields: ["title"], display_fields: ["title", "destination", "brand"], value_field: "{{slug}}", multiple: true, required: false},
