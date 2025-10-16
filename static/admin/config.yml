@@ -24,26 +24,6 @@ aliases:
 publish_mode: editorial_workflow
 
 collections:
-  - name: properties
-    label: Property groups
-    label_singular: property group
-    format: yaml-frontmatter
-    folder: content/properties
-    path: '{{slug}}/_index'
-    create: true
-    i18n: true
-    description: Property landing pages
-    editor:
-      preview: false
-    filter: {field: visibleInCMS, value: true}
-    fields: [
-      {name: title, widget: string},
-      {name: description, widget: text},
-      {name: image, widget: image},
-      {name: body, widget: markdown},
-      *VISIBLE_IN_CMS,
-    ]
-
   - name: posts
     label: Posts
     label_singular: post
