@@ -2,7 +2,7 @@ local_backend: true
 
 backend:
   name: git-gateway
-  branch: main
+  branch: __BRANCH__
   squash_merges: true
 
 publish_mode: editorial_workflow
@@ -21,9 +21,6 @@ i18n:
 
 aliases:
   - &VISIBLE_IN_CMS {name: visibleInCMS, widget: hidden, default: true, i18n: duplicate}
-
-# https://www.netlifycms.org/docs/configuration-options/#publish-mode
-# publish_mode: editorial_workflow
 
 collections:
   - name: properties
@@ -58,6 +55,7 @@ collections:
     # Enable this for a prewiew on the right when editing. You will have to create a preview template for it to make sense.
     editor:
       preview: false
+      notes: true
 
     # more about widgets: https://www.netlifycms.org/docs/widgets/
     fields: [

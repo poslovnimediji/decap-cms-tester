@@ -1,25 +1,41 @@
 #!/bin/bash
 
-if [[ "$CONTEXT" = "production" ]]
-then
-  echo ----- PRODUCTION
-  sed -i "s|__BRANCH__|${HEAD}|g" static/admin/config.yml
-  hugo --gc --minify -b $URL
-  status=$?
-else
-  echo +++++ PREVIEW
-  sed -i "s|__BRANCH__|${HEAD}|g" static/admin/config.yml
-  hugo --gc -b $DEPLOY_PRIME_URL
-  status=$?
-fi
-echo -------------------
+set -euo pipefail
 
-if [ $status -eq 0 ]
-then
-  # npm run env
-  echo "Build success ......"
+# Resolve branch/HEAD
+HEAD="${CF_PAGES_BRANCH:-${HEAD:-$(git rev-parse --short HEAD 2>/dev/null || echo main)}}"
+
+# Resolve CONTEXT and BASE_URL
+if [[ "${CF_PAGES:-}" == "1" ]]; then
+  if [[ "${CF_PAGES_BRANCH:-}" == "main" ]]; then
+    CONTEXT="production"
+  else
+    CONTEXT="preview"
+  fi
+  BASE_URL="${CF_PAGES_URL:-/}"
 else
-  echo "Build failure ############# " >&2
+  if [[ "${CONTEXT:-}" == "production" && -n "${URL:-}" ]]; then
+    BASE_URL="$URL"
+  elif [[ -n "${DEPLOY_PRIME_URL:-}" ]]; then
+    BASE_URL="$DEPLOY_PRIME_URL"
+    CONTEXT="${CONTEXT:-preview}"
+  else
+    BASE_URL="/"
+    CONTEXT="${CONTEXT:-preview}"
+  fi
 fi
 
-exit $status
+# Update admin config branch placeholder (portable sed)
+if [[ -f static/admin/config.yml ]]; then
+  sed -i.bak "s|__BRANCH__|${HEAD}|g" static/admin/config.yml || true
+  rm -f static/admin/config.yml.bak
+fi
+
+# Build
+if [[ "${CONTEXT}" == "production" ]]; then
+  hugo --gc --minify -b "${BASE_URL}"
+else
+  hugo --gc -b "${BASE_URL}"
+fi
+
+exit 0
