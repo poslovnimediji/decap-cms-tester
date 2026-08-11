@@ -6,7 +6,8 @@ backend:
   branch: turbo
   squash_merges: true
   turbo_site_id: e20ad6dd-c225-4551-9dff-e7b47911faa7
-  turbo_config_url: https://qjgdbiszozrkhrswmonq.supabase.co/functions/v1/config
+  turbo_config_url: https://ioltadnfuvnndhbzbagl.supabase.co/functions/v1/config
+  # turbo_admin_url: http://localhost:4321
 
 publish_mode: editorial_workflow
 display_url: https://hugo-template.netlify.app/

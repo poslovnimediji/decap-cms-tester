@@ -1,6 +1,7 @@
 public
 resources
 node_modules
+static/admin/decap-cms-local
 static/node_modules
 .idea
 design
