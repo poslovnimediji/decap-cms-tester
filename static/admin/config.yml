@@ -1,7 +1,7 @@
 local_backend: true
 
 backend:
-  name: decap-turbo
+  name: turbo-github
   repo: poslovnimediji/decap-cms-tester
   branch: turbo
   squash_merges: true
