@@ -7,7 +7,7 @@ backend:
   squash_merges: true
   turbo_site_id: 7eb3acad-ddf7-4656-afd3-fd0652f69b44
   turbo_config_url: https://ioltadnfuvnndhbzbagl.supabase.co/functions/v1/config
-  # turbo_admin_url: http://localhost:4321
+  turbo_admin_url: https://develop--decap-turbo.netlify.app
 
 publish_mode: editorial_workflow
 display_url: https://hugo-template.netlify.app/
