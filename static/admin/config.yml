@@ -5,7 +5,7 @@ backend:
   repo: poslovnimediji/decap-cms-tester
   branch: turbo
   squash_merges: true
-  turbo_site_id: 30ba1202-31e8-40a3-8ca3-52f925f853e7
+  turbo_site_id: 7eb3acad-ddf7-4656-afd3-fd0652f69b44
   turbo_config_url: https://ioltadnfuvnndhbzbagl.supabase.co/functions/v1/config
   # turbo_admin_url: http://localhost:4321
 
