@@ -1,9 +1,8 @@
 local_backend: true
 
 backend:
-  name: turbo-github
+  name: git-gateway
   branch: turbo
-  turbo_site_id: 97d7720b-b052-48c9-ac76-120b72f160ea
 
 publish_mode: editorial_workflow
 logo_url: /media/brand/logo.svg
