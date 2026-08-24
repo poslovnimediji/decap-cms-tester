@@ -13,6 +13,10 @@ slug:
   encoding: ascii
   clean_accents: true
 
+i18n:
+  structure: multiple_files
+  locales: [en, de, si]
+
 collections:
   - name: posts
     label: Posts
@@ -20,14 +24,14 @@ collections:
     folder: content/posts
     create: true
     slug: "{{slug}}"
+    i18n: true
     editor:
       preview: false
     fields: [
-      {name: title, widget: string},
-      {name: properties, widget: relation, collection: properties, search_fields: ["title"], display_fields: ["title", "destination", "brand"], value_field: "{{slug}}", multiple: true, required: false},
-      {name: description, widget: text},
-      {name: image, widget: image,},
-      {name: body, widget: markdown},
+      {name: title, widget: string, i18n: true},
+      {name: description, widget: text, i18n: true},
+      {name: image, widget: image, i18n: duplicate},
+      {name: body, widget: markdown, i18n: true},
     ]
 
   - name: general
