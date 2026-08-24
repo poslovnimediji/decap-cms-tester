@@ -1,8 +1,10 @@
 local_backend: true
 
 backend:
-  name: git-gateway
+  name: turbo-github
   branch: turbo
+  repo: poslovnimediji/decap-cms-tester
+  turbo-site-id: d680a65c-d94c-49ab-92bf-89ee5ebee424
 
 media_folder: static/media/uploads
 public_folder: /media/uploads
