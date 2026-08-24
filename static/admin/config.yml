@@ -15,8 +15,6 @@ i18n:
   structure: multiple_files
   locales: [en, de, si]
 
-aliases:
-  - &VISIBLE_IN_CMS {name: visibleInCMS, widget: hidden, default: true, i18n: duplicate}
 collections:
   - name: posts
     label: Posts
@@ -25,7 +23,6 @@ collections:
     create: true
     slug: "{{slug}}"
     i18n: true
-    filter: {field: visibleInCMS, value: true}
     editor:
       preview: false
     fields: [
@@ -34,7 +31,6 @@ collections:
       {name: description, widget: text, i18n: true},
       {name: image, widget: image, i18n: duplicate},
       {name: body, widget: markdown, i18n: true},
-      *VISIBLE_IN_CMS,
     ]
 
   - name: general
