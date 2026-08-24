@@ -1,25 +1,11 @@
-local_backend: true
-
 backend:
-  name: turbo-github
-  repo: poslovnimediji/decap-cms-tester
+  name: git-gateway
   branch: turbo
-  squash_merges: true
-  turbo_site_id: 7eb3acad-ddf7-4656-afd3-fd0652f69b44
-  turbo_config_url: https://ioltadnfuvnndhbzbagl.supabase.co/functions/v1/config
-  turbo_admin_url: https://develop--decap-turbo.netlify.app
 
 publish_mode: editorial_workflow
-display_url: https://hugo-template.netlify.app/
 logo_url: /media/brand/logo.svg
 media_folder: static/media/uploads
 public_folder: /media/uploads
-
-media_library:
-  name: s3
-  config:
-    public_url_prefix: https://pub-526b8c0107934ae7adb0610a02f1c27e.r2.dev
-    root_path: /
 
 slug:
   encoding: ascii
@@ -31,31 +17,7 @@ i18n:
 
 aliases:
   - &VISIBLE_IN_CMS {name: visibleInCMS, widget: hidden, default: true, i18n: duplicate}
-
-# https://www.netlifycms.org/docs/configuration-options/#publish-mode
-# publish_mode: editorial_workflow
-
 collections:
-  - name: properties
-    label: Property groups
-    label_singular: property group
-    format: yaml-frontmatter
-    folder: content/properties
-    path: '{{slug}}/_index'
-    create: true
-    i18n: true
-    description: Property landing pages
-    editor:
-      preview: false
-    filter: {field: visibleInCMS, value: true}
-    fields: [
-      {name: title, widget: string},
-      {name: description, widget: text},
-      {name: image, widget: image},
-      {name: body, widget: markdown},
-      *VISIBLE_IN_CMS,
-    ]
-
   - name: posts
     label: Posts
     label_singular: post
@@ -63,13 +25,9 @@ collections:
     create: true
     slug: "{{slug}}"
     i18n: true
-    # This is hack to remove index.md from the list. Add visibleInCMS: true to all content files except index pages.
     filter: {field: visibleInCMS, value: true}
-    # Enable this for a prewiew on the right when editing. You will have to create a preview template for it to make sense.
     editor:
       preview: false
-
-    # more about widgets: https://www.netlifycms.org/docs/widgets/
     fields: [
       {name: title, widget: string, i18n: true},
       {name: properties, widget: relation, collection: properties, search_fields: ["title"], display_fields: ["title", "destination", "brand"], value_field: "{{slug}}", multiple: true, required: false},
