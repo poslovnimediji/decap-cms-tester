@@ -2,9 +2,11 @@ local_backend: true
 
 backend:
   name: turbo-github
-  branch: turbo
   repo: poslovnimediji/decap-cms-tester
-  turbo_site_id: 2f3e70ef-77ab-4089-9d5c-8218151c5ba9
+  branch: turbo
+  turbo_site_id: 7eb3acad-ddf7-4656-afd3-fd0652f69b44
+  turbo_config_url: https://ioltadnfuvnndhbzbagl.supabase.co/functions/v1/config
+  turbo_admin_url: https://develop--decap-turbo.netlify.app
 
 media_folder: static/media/uploads
 public_folder: /media/uploads
