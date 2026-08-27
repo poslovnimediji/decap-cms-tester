@@ -32,7 +32,7 @@ collections:
     fields: [
       {name: title, widget: string, i18n: true},
       {name: description, widget: text, i18n: true},
-      {name: image, widget: image, i18n: duplicate},
+      {name: image, widget: image, i18n: duplicate, required: false},
       {name: body, widget: markdown, i18n: true},
     ]
 
