@@ -1,5 +1,5 @@
 ---
-title: Accusantium Architecto Non Voluptatum Temporibus
+title: Accusantium Architecto Non Voluptatum
 date: 2024-08-14T20:00:00+01:00
 description: Impedit tempora numquam ratione ipsum temporibus esse architecto
   provident dolor consectetur quasi.
