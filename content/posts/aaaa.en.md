@@ -1,5 +1,5 @@
 ---
-title: " deploy-eventsAaaa B-test"
+title: Aaaa B-test
 description: Af
 ---
 Adsf
