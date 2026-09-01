@@ -1,5 +1,5 @@
 ---
-title: Aaaa B-test 1
+title: Aaaa B-test
 description: Af
 ---
 Adsf
