@@ -31,9 +31,24 @@ collections:
       preview: false
     fields: [
       {name: title, widget: string, i18n: true},
-      {name: description, widget: text, i18n: true},
+      {name: description, widget: text, i18n: true, required: false},
       {name: image, widget: image, i18n: duplicate, required: false},
       {name: body, widget: markdown, i18n: true},
+      {name: author, widget: relation, i18n: duplicate, required: false, collection: authors, value_field: title, search_fields: [title]},
+    ]
+
+  - name: authors
+    label: Authors
+    label_singular: author
+    folder: content/authors
+    create: true
+    slug: "{{slug}}"
+    i18n: true
+    editor:
+      preview: false
+    fields: [
+      {name: title, widget: string, i18n: duplicate},
+      {name: description, widget: text, i18n: true, required: false},
     ]
 
   - name: general
