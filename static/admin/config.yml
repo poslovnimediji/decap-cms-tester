@@ -9,6 +9,8 @@ backend:
 media_folder: static/media/uploads
 public_folder: /media/uploads
 
+publish_mode: editorial_workflow
+
 slug:
   encoding: ascii
   clean_accents: true
