@@ -2,7 +2,7 @@ local_backend: true
 
 backend:
   name: git-gateway
-  branch: main
+  branch: index-fields
   squash_merges: true
 
 publish_mode: editorial_workflow
@@ -45,6 +45,39 @@ collections:
       {name: body, widget: markdown},
       *VISIBLE_IN_CMS,
     ]
+
+  # Exercises decaporg/decap-cms#7382 (index fields).
+  #
+  # `index_file.pattern` picks which entries get the index field set; `meta.path.index_file`
+  # picks the filename an index entry is written to. Both are required and must agree.
+  #
+  # Note there is no `filter: {field: visibleInCMS}` here: index files are first class in this
+  # collection, so the hack the other collections use to hide `_index` files is not needed.
+  - name: sections
+    label: Sections
+    label_singular: section
+    format: yaml-frontmatter
+    folder: content/sections
+    create: true
+    i18n: true
+    nested: {depth: 3, subfolders: false}
+    index_file:
+      pattern: '^_index$'
+      editor:
+        preview: false
+      fields: [
+        {name: title, widget: string, i18n: true},
+        {name: intro, widget: text, i18n: true, required: false},
+        *VISIBLE_IN_CMS,
+      ]
+    editor:
+      preview: false
+    fields: [
+      {name: title, widget: string, i18n: true},
+      {name: body, widget: markdown, i18n: true},
+      *VISIBLE_IN_CMS,
+    ]
+    meta: {path: {widget: string, label: Path, index_file: '_index'}}
 
   - name: posts
     label: Posts
