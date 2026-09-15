@@ -27,6 +27,7 @@ collections:
     i18n: true
     editor:
       preview: false
+      notes: true
     fields: [
       {name: title, widget: string, i18n: true},
       {name: description, widget: text, i18n: true, required: false},
