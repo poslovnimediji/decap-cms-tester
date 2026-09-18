@@ -1,8 +1,8 @@
 local_backend: true
 
 backend:
-  name: turbo-github
-  turbo_site_id: 32687833-0709-447c-8316-247030663f63
+  name: git-gateway
+  branch: turbo
 
 media_folder: static/media/uploads
 public_folder: /media/uploads
